@@ -8,7 +8,7 @@ ExecStart=/usr/bin/dotnet /var/www/stockcalc/StockCalc.Web.dll
 User=www-data
 Group=www-data
 Environment=ASPNETCORE_ENVIRONMENT=Production
-Environment=ASPNETCORE_URLS=http://127.0.0.1:5000
+Environment=ASPNETCORE_URLS=http://127.0.0.1:5001
 Restart=always
 RestartSec=5
 KillSignal=SIGINT
