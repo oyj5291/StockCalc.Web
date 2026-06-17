@@ -1,0 +1,34 @@
+@model AveragePriceCalculatorViewModel
+@{
+    ViewData["Title"] = "평단가 계산기";
+}
+
+<section class="page-title">
+    <p class="eyebrow">Calculator</p>
+    <h1>평단가 계산기</h1>
+    <p>기존 보유 주식과 추가 매수 주식을 합산해 새로운 평균단가를 확인합니다.</p>
+</section>
+
+<section class="calculator">
+    <form asp-action="AveragePrice" method="post">
+        <div class="form-grid">
+            <div class="field"><label asp-for="ExistingPrice"></label><input asp-for="ExistingPrice" type="number" step="1" /></div>
+            <div class="field"><label asp-for="ExistingQuantity"></label><input asp-for="ExistingQuantity" type="number" step="1" /></div>
+            <div class="field"><label asp-for="AdditionalPrice"></label><input asp-for="AdditionalPrice" type="number" step="1" /></div>
+            <div class="field"><label asp-for="AdditionalQuantity"></label><input asp-for="AdditionalQuantity" type="number" step="1" /></div>
+        </div>
+        <div class="form-actions"><button class="button primary" type="submit">계산하기</button><a class="button" asp-action="AveragePrice">초기화</a></div>
+    </form>
+    <div class="results">
+        <div class="result-row"><span>총 보유수량</span><strong>@Model.TotalQuantity.ToString("N0")주</strong></div>
+        <div class="result-row"><span>총 매수금액</span><strong>@Model.TotalAmount.ToString("N0")원</strong></div>
+        <div class="result-row"><span>새로운 평균단가</span><strong>@Model.NewAveragePrice.ToString("N0")원</strong></div>
+    </div>
+</section>
+
+<aside class="ad-box">광고 영역</aside>
+<section class="content">
+    <div class="notice">평단가 하락이 손실 회복을 보장하지는 않습니다. 투자 판단은 스스로의 기준과 리스크 관리에 따라야 합니다.</div>
+    <h2>평단가란?</h2>
+    <p>평단가는 총 매수금액을 총 보유수량으로 나눈 값입니다. 추가 매수 가격이 기존 평균보다 낮으면 평균단가는 내려가고, 높으면 올라갑니다.</p>
+</section>

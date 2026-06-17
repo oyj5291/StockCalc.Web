@@ -1,0 +1,24 @@
+@model CompoundCalculatorViewModel
+@{
+    ViewData["Title"] = "복리 수익률 계산기";
+}
+
+<section class="page-title"><p class="eyebrow">Calculator</p><h1>복리 수익률 계산기</h1><p>매월 추가 투자하는 경우 장기 평가금액을 월 복리 방식으로 추정합니다.</p></section>
+<section class="calculator">
+    <form asp-action="Compound" method="post">
+        <div class="form-grid">
+            <div class="field"><label asp-for="InitialInvestment"></label><input asp-for="InitialInvestment" type="number" step="1" /></div>
+            <div class="field"><label asp-for="MonthlyInvestment"></label><input asp-for="MonthlyInvestment" type="number" step="1" /></div>
+            <div class="field"><label asp-for="AnnualReturnRate"></label><input asp-for="AnnualReturnRate" type="number" step="0.1" /></div>
+            <div class="field"><label asp-for="Years"></label><input asp-for="Years" type="number" step="1" /></div>
+        </div>
+        <div class="form-actions"><button class="button primary" type="submit">계산하기</button><a class="button" asp-action="Compound">초기화</a></div>
+    </form>
+    <div class="results">
+        <div class="result-row"><span>예상 평가금액</span><strong>@Model.FutureValue.ToString("N0")원</strong></div>
+        <div class="result-row"><span>총 투자원금</span><strong>@Model.Principal.ToString("N0")원</strong></div>
+        <div class="result-row"><span>예상 수익금</span><strong class="@(Model.Profit >= 0 ? "positive" : "negative")">@Model.Profit.ToString("N0")원</strong></div>
+    </div>
+</section>
+<aside class="ad-box">광고 영역</aside>
+<section class="content"><div class="notice">복리 결과는 가정 수익률을 기반으로 한 단순 추정이며 실제 투자 성과와 다를 수 있습니다.</div><h2>복리 계산의 핵심</h2><p>복리는 수익이 다시 원금에 더해져 다음 기간의 수익을 만드는 구조입니다.</p></section>

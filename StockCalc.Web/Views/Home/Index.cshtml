@@ -1,0 +1,68 @@
+@{
+    ViewData["Title"] = "주식 계산기와 투자 기초";
+}
+
+<section class="hero">
+    <div class="hero-copy">
+        <p class="eyebrow">Stock Calculator Lab</p>
+        <h1>복잡한 주식 계산을 쉽게.</h1>
+        <p>수익률, 평단가, 손절가, 배당금, 복리 수익률을 쉽고 빠른 웹 계산기로 확인하세요.</p>
+        <div class="hero-actions">
+            <a class="button primary" asp-controller="Calculators" asp-action="Profit">수익률 계산기</a>
+            <a class="button" asp-controller="Calculators" asp-action="AveragePrice">평단가 계산기</a>
+            <a class="button" asp-controller="Calculators" asp-action="StopLoss">손절가 계산기</a>
+        </div>
+    </div>
+    <div class="hero-panel" aria-label="계산기 요약">
+        <span>순손익 예시</span>
+        <strong>+588,330원</strong>
+        <small>매수가 50,000원, 매도가 56,000원, 100주 기준 예시입니다.</small>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-heading">
+        <p class="eyebrow">Popular Tools</p>
+        <h2>인기 계산기</h2>
+    </div>
+    <div class="card-grid">
+        <a class="tool-card" asp-controller="Calculators" asp-action="Profit">
+            <span>01</span>
+            <h3>주식 수익률 계산기</h3>
+            <p>매수가, 매도가, 수량, 수수료와 세금을 반영해 순손익을 계산합니다.</p>
+            <span class="card-link">바로가기 →</span>
+        </a>
+        <a class="tool-card" asp-controller="Calculators" asp-action="AveragePrice">
+            <span>02</span>
+            <h3>평단가 계산기</h3>
+            <p>기존 보유분과 추가 매수분을 합산해 새로운 평균단가를 확인합니다.</p>
+            <span class="card-link">바로가기 →</span>
+        </a>
+        <a class="tool-card" asp-controller="Calculators" asp-action="WaterAverage">
+            <span>03</span>
+            <h3>물타기 계산기</h3>
+            <p>추가 매수금액으로 몇 주를 살 수 있고 평단가가 어떻게 변하는지 계산합니다.</p>
+            <span class="card-link">바로가기 →</span>
+        </a>
+        <a class="tool-card" asp-controller="Calculators" asp-action="Dividend">
+            <span>04</span>
+            <h3>배당금 계산기</h3>
+            <p>세전 배당금, 배당소득세, 세후 배당금을 간단히 계산합니다.</p>
+            <span class="card-link">바로가기 →</span>
+        </a>
+    </div>
+</section>
+
+<section class="section split">
+    <div>
+        <p class="eyebrow">Guide</p>
+        <h2>투자 기초 글</h2>
+        <p class="muted">계산 결과를 이해하는 데 필요한 기본 개념을 짧고 명확하게 정리합니다.</p>
+    </div>
+    <div class="article-list">
+        <a asp-controller="Articles" asp-action="BasicStockReturn">주식 수익률 계산 방법</a>
+        <a asp-controller="Articles" asp-action="AveragePriceGuide">평단가란 무엇이고 어떻게 계산할까?</a>
+    </div>
+</section>
+
+<aside class="ad-box" aria-label="광고 영역">광고 영역</aside>

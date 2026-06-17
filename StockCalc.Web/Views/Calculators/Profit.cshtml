@@ -1,0 +1,38 @@
+@model ProfitCalculatorViewModel
+@{
+    ViewData["Title"] = "주식 수익률 계산기";
+}
+
+<section class="page-title">
+    <p class="eyebrow">Calculator</p>
+    <h1>주식 수익률 계산기</h1>
+    <p>매수와 매도 금액에 수수료와 세금을 반영해 실제에 가까운 순손익을 계산합니다.</p>
+</section>
+
+<section class="calculator">
+    <form asp-action="Profit" method="post">
+        <div class="form-grid">
+            <div class="field"><label asp-for="BuyPrice"></label><input asp-for="BuyPrice" type="number" step="1" /></div>
+            <div class="field"><label asp-for="SellPrice"></label><input asp-for="SellPrice" type="number" step="1" /></div>
+            <div class="field"><label asp-for="Quantity"></label><input asp-for="Quantity" type="number" step="1" /></div>
+            <div class="field"><label asp-for="FeeRate"></label><input asp-for="FeeRate" type="number" step="0.001" /></div>
+            <div class="field"><label asp-for="TaxRate"></label><input asp-for="TaxRate" type="number" step="0.01" /></div>
+        </div>
+        <div class="form-actions"><button class="button primary" type="submit">계산하기</button><a class="button" asp-action="Profit">초기화</a></div>
+    </form>
+    <div class="results">
+        <div class="result-row"><span>총 매수금액</span><strong>@Model.BuyTotal.ToString("N0")원</strong></div>
+        <div class="result-row"><span>총 매도금액</span><strong>@Model.SellTotal.ToString("N0")원</strong></div>
+        <div class="result-row"><span>수수료</span><strong>@Model.Fee.ToString("N0")원</strong></div>
+        <div class="result-row"><span>세금</span><strong>@Model.Tax.ToString("N0")원</strong></div>
+        <div class="result-row"><span>순손익</span><strong class="@(Model.NetProfit >= 0 ? "positive" : "negative")">@Model.NetProfit.ToString("N0")원</strong></div>
+        <div class="result-row"><span>수익률</span><strong class="@(Model.ReturnRate >= 0 ? "positive" : "negative")">@Model.ReturnRate.ToString("N2")%</strong></div>
+    </div>
+</section>
+
+<aside class="ad-box">광고 영역</aside>
+<section class="content">
+    <div class="notice">본 계산기는 투자 판단을 돕는 참고용 도구이며 투자 권유가 아닙니다.</div>
+    <h2>수익률 계산 방법</h2>
+    <p>순손익은 총 매도금액에서 총 매수금액, 수수료, 세금을 뺀 값입니다. 수익률은 순손익을 총 매수금액으로 나누어 계산합니다.</p>
+</section>

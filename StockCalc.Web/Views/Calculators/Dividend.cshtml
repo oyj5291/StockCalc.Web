@@ -1,0 +1,23 @@
+@model DividendCalculatorViewModel
+@{
+    ViewData["Title"] = "배당금 계산기";
+}
+
+<section class="page-title"><p class="eyebrow">Calculator</p><h1>배당금 계산기</h1><p>예상 배당금에서 배당소득세를 제외한 세후 금액을 계산합니다.</p></section>
+<section class="calculator">
+    <form asp-action="Dividend" method="post">
+        <div class="form-grid">
+            <div class="field"><label asp-for="Quantity"></label><input asp-for="Quantity" type="number" step="1" /></div>
+            <div class="field"><label asp-for="DividendPerShare"></label><input asp-for="DividendPerShare" type="number" step="1" /></div>
+            <div class="field"><label asp-for="TaxRate"></label><input asp-for="TaxRate" type="number" step="0.1" /></div>
+        </div>
+        <div class="form-actions"><button class="button primary" type="submit">계산하기</button><a class="button" asp-action="Dividend">초기화</a></div>
+    </form>
+    <div class="results">
+        <div class="result-row"><span>세전 배당금</span><strong>@Model.GrossDividend.ToString("N0")원</strong></div>
+        <div class="result-row"><span>세금</span><strong>@Model.Tax.ToString("N0")원</strong></div>
+        <div class="result-row"><span>세후 배당금</span><strong>@Model.NetDividend.ToString("N0")원</strong></div>
+    </div>
+</section>
+<aside class="ad-box">광고 영역</aside>
+<section class="content"><div class="notice">세율과 과세 방식은 투자 상품과 개인 상황에 따라 달라질 수 있습니다.</div><h2>배당금 계산</h2><p>세전 배당금은 보유수량에 1주당 배당금을 곱한 값입니다.</p></section>

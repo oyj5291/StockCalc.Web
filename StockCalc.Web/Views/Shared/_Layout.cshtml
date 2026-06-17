@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="주식 수익률, 평단가, 물타기, 손절가, 목표가, 배당금, 복리 수익률을 계산하는 정보성 투자 계산기 사이트입니다." />
+    <title>@ViewData["Title"] | 주식계산연구소</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" asp-controller="Home" asp-action="Index">주식계산연구소</a>
+        <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+        <nav class="site-nav" aria-label="주요 메뉴">
+            <a asp-controller="Home" asp-action="Index">홈</a>
+            <a asp-controller="Calculators" asp-action="Profit">수익률</a>
+            <a asp-controller="Calculators" asp-action="AveragePrice">평단가</a>
+            <a asp-controller="Calculators" asp-action="WaterAverage">물타기</a>
+            <a asp-controller="Articles" asp-action="BasicStockReturn">투자기초</a>
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <strong>주식계산연구소</strong>
+        <p>본 사이트는 계산 편의를 위한 정보성 도구이며, 특정 종목 추천이나 투자 권유를 제공하지 않습니다.</p>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

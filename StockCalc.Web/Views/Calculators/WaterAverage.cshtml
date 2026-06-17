@@ -1,0 +1,34 @@
+@model WaterAverageCalculatorViewModel
+@{
+    ViewData["Title"] = "물타기 계산기";
+}
+
+<section class="page-title">
+    <p class="eyebrow">Calculator</p>
+    <h1>물타기 계산기</h1>
+    <p>추가 매수금액으로 살 수 있는 수량과 매수 후 평균단가를 계산합니다.</p>
+</section>
+
+<section class="calculator">
+    <form asp-action="WaterAverage" method="post">
+        <div class="form-grid">
+            <div class="field"><label asp-for="CurrentAveragePrice"></label><input asp-for="CurrentAveragePrice" type="number" step="1" /></div>
+            <div class="field"><label asp-for="CurrentQuantity"></label><input asp-for="CurrentQuantity" type="number" step="1" /></div>
+            <div class="field"><label asp-for="CurrentPrice"></label><input asp-for="CurrentPrice" type="number" step="1" /></div>
+            <div class="field"><label asp-for="AdditionalAmount"></label><input asp-for="AdditionalAmount" type="number" step="1" /></div>
+        </div>
+        <div class="form-actions"><button class="button primary" type="submit">계산하기</button><a class="button" asp-action="WaterAverage">초기화</a></div>
+    </form>
+    <div class="results">
+        <div class="result-row"><span>추가매수수량</span><strong>@Model.AdditionalQuantity.ToString("N0")주</strong></div>
+        <div class="result-row"><span>총 보유수량</span><strong>@Model.TotalQuantity.ToString("N0")주</strong></div>
+        <div class="result-row"><span>새로운 평균단가</span><strong>@Model.NewAveragePrice.ToString("N0")원</strong></div>
+    </div>
+</section>
+
+<aside class="ad-box">광고 영역</aside>
+<section class="content">
+    <div class="notice">물타기는 손실 구간에서 투자금이 더 커지는 전략입니다. 계산 결과와 별개로 손실 제한 기준을 함께 검토해야 합니다.</div>
+    <h2>물타기 계산의 의미</h2>
+    <p>현재가가 기존 평균단가보다 낮을 때 추가 매수하면 평균단가는 내려갑니다. 하지만 종목 하락이 계속되면 손실 규모도 함께 커질 수 있습니다.</p>
+</section>
