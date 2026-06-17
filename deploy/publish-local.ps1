@@ -1,5 +1,5 @@
 param(
-    [string]$Output = ".\publish"
+    [string]$Output = ".\artifacts\publish"
 )
 
 $ErrorActionPreference = "Stop"

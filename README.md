@@ -38,3 +38,12 @@ dotnet build .\StockCalc.Web\StockCalc.Web.csproj
 ## 배포 준비
 
 Oracle Cloud Ubuntu VM 배포 절차는 [deploy/oracle-cloud.md](deploy/oracle-cloud.md)를 참고하세요.
+
+## Git 원격 저장소
+
+`MoneyCalc.Web`과 같은 GitHub 계정/패턴을 사용한다면 다음 주소를 원격 저장소로 사용합니다.
+
+```powershell
+git remote add origin https://github.com/oyj5291/StockCalc.Web.git
+git push -u origin main
+```

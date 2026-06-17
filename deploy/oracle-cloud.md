@@ -1,122 +1,107 @@
-# Oracle Cloud 배포 가이드
+# Oracle Cloud Ubuntu 배포
 
-이 문서는 `주식계산연구소`를 Oracle Cloud Ubuntu VM에 배포하기 위한 준비 절차입니다.
+이 문서는 `stockcalc.ai.kr` 기준으로 작성했습니다. 다른 도메인을 사용할 경우 `nginx-stockcalc.conf`의 `server_name`을 먼저 변경합니다.
 
-## 1. 기본 구조
+## 1. 로컬에서 게시
 
-권장 구조:
+솔루션 루트에서 실행합니다.
 
-```text
-GitHub 또는 Git 원격 저장소
-  -> Oracle Cloud Ubuntu VM
-  -> /var/www/stockcalc-web 에 게시 파일 배치
-  -> systemd 서비스로 앱 실행
-  -> Nginx가 80/443 요청을 앱의 127.0.0.1:5000으로 전달
+```powershell
+dotnet publish .\StockCalc.Web\StockCalc.Web.csproj -c Release -o .\artifacts\publish
 ```
 
-## 2. Oracle Cloud에서 준비할 것
+게시 결과와 배포 설정 파일을 서버로 전송합니다. 아래의 키 경로, 서버 IP는 실제 값으로 바꿉니다.
 
-1. Ubuntu 24.04 VM 생성
-2. 공인 IP 연결
-3. 보안 목록 또는 네트워크 보안 그룹에서 포트 허용
-   - SSH: 22
-   - HTTP: 80
-   - HTTPS: 443
-4. 도메인을 사용할 경우 DNS A 레코드를 VM 공인 IP로 연결
+```powershell
+scp -i C:\path\oracle.key -r .\artifacts\publish\* ubuntu@SERVER_IP:/tmp/stockcalc/
+scp -i C:\path\oracle.key .\deploy\stockcalc.service ubuntu@SERVER_IP:/tmp/
+scp -i C:\path\oracle.key .\deploy\nginx-stockcalc.conf ubuntu@SERVER_IP:/tmp/
+```
 
-## 3. 서버 패키지 설치
+## 2. Ubuntu 패키지 설치
 
-Ubuntu 24.04 기준:
+Ubuntu 24.04 이상에서는 다음 패키지를 설치합니다.
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y nginx git
+sudo apt-get install -y aspnetcore-runtime-10.0 nginx certbot python3-certbot-nginx
+dotnet --list-runtimes
+```
+
+`aspnetcore-runtime-10.0`을 찾지 못하면 backports 저장소를 추가한 뒤 다시 설치합니다.
+
+```bash
+sudo add-apt-repository ppa:dotnet/backports
+sudo apt-get update
 sudo apt-get install -y aspnetcore-runtime-10.0
 ```
 
-서버에서 직접 빌드할 계획이면 SDK도 설치합니다.
+## 3. 애플리케이션 설치
 
 ```bash
-sudo apt-get install -y dotnet-sdk-10.0
-```
+sudo mkdir -p /var/www/stockcalc
+sudo cp -a /tmp/stockcalc/. /var/www/stockcalc/
+sudo chown -R www-data:www-data /var/www/stockcalc
+sudo chmod -R u=rwX,g=rX,o= /var/www/stockcalc
 
-Microsoft 공식 문서 기준으로 Ubuntu 24.04는 `aspnetcore-runtime-10.0`과 `dotnet-sdk-10.0` 설치를 지원합니다.
-
-## 4. 앱 게시
-
-로컬 PC에서 게시 파일을 만들 경우:
-
-```powershell
-cd C:\Users\optro\source\repos\StockCalc.Web
-dotnet publish .\StockCalc.Web\StockCalc.Web.csproj -c Release -o .\publish
-```
-
-게시 파일을 서버로 복사합니다.
-
-```powershell
-scp -r .\publish\* ubuntu@서버IP:/tmp/stockcalc-web/
-```
-
-서버에서 배치합니다.
-
-```bash
-sudo mkdir -p /var/www/stockcalc-web
-sudo rsync -av --delete /tmp/stockcalc-web/ /var/www/stockcalc-web/
-sudo chown -R www-data:www-data /var/www/stockcalc-web
-```
-
-## 5. systemd 서비스 등록
-
-이 저장소의 샘플 파일을 서버에 복사합니다.
-
-```bash
-sudo cp deploy/stockcalc-web.service /etc/systemd/system/stockcalc-web.service
+sudo cp /tmp/stockcalc.service /etc/systemd/system/stockcalc.service
 sudo systemctl daemon-reload
-sudo systemctl enable stockcalc-web
-sudo systemctl start stockcalc-web
-sudo systemctl status stockcalc-web
+sudo systemctl enable --now stockcalc
+sudo systemctl status stockcalc --no-pager
+curl --fail http://127.0.0.1:5000/healthz
 ```
 
 로그 확인:
 
 ```bash
-journalctl -u stockcalc-web -f
+sudo journalctl -u stockcalc -n 100 --no-pager
+sudo journalctl -u stockcalc -f
 ```
 
-## 6. Nginx 설정
-
-도메인을 사용할 경우 `deploy/nginx-stockcalc.conf`의 `server_name`을 실제 도메인으로 바꿉니다.
+## 4. Nginx 연결
 
 ```bash
-sudo cp deploy/nginx-stockcalc.conf /etc/nginx/sites-available/stockcalc-web
-sudo ln -s /etc/nginx/sites-available/stockcalc-web /etc/nginx/sites-enabled/stockcalc-web
+sudo cp /tmp/nginx-stockcalc.conf /etc/nginx/sites-available/stockcalc
+sudo ln -s /etc/nginx/sites-available/stockcalc /etc/nginx/sites-enabled/stockcalc
+sudo rm -f /etc/nginx/sites-enabled/default
 sudo nginx -t
 sudo systemctl reload nginx
 ```
 
-## 7. HTTPS 적용
-
-도메인 연결 후 Certbot을 사용할 수 있습니다.
+Oracle Cloud 보안 목록과 Ubuntu 방화벽에서 TCP 80, 443 포트를 허용합니다.
 
 ```bash
-sudo apt-get install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d example.com -d www.example.com
+sudo ufw allow 'Nginx Full'
+sudo ufw status
 ```
 
-`example.com`은 실제 도메인으로 바꿉니다.
+DNS에서 `stockcalc.ai.kr`과 `www.stockcalc.ai.kr`의 A 레코드를 Oracle VM 공인 IP로 연결한 뒤 HTTP 접속을 확인합니다.
 
-## 8. 업데이트 배포
+## 5. HTTPS 적용
 
-새 버전을 게시한 뒤 서버에 복사하고 서비스를 재시작합니다.
+DNS 전파와 HTTP 접속 확인 후 실행합니다.
 
 ```bash
-sudo rsync -av --delete /tmp/stockcalc-web/ /var/www/stockcalc-web/
-sudo chown -R www-data:www-data /var/www/stockcalc-web
-sudo systemctl restart stockcalc-web
-sudo systemctl status stockcalc-web
+sudo certbot --nginx -d stockcalc.ai.kr -d www.stockcalc.ai.kr
+sudo certbot renew --dry-run
 ```
 
-## 참고 문서
+최종 확인:
 
-- .NET Ubuntu 설치: https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu
-- ASP.NET Core + Nginx 배포: https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx
+```bash
+curl --fail https://stockcalc.ai.kr/healthz
+```
+
+## 6. 이후 버전 업데이트
+
+새 게시 파일을 `/tmp/stockcalc`로 전송한 뒤 다음 순서로 교체합니다.
+
+```bash
+sudo systemctl stop stockcalc
+sudo cp -a /tmp/stockcalc/. /var/www/stockcalc/
+sudo chown -R www-data:www-data /var/www/stockcalc
+sudo systemctl start stockcalc
+curl --fail http://127.0.0.1:5000/healthz
+```
+
+배포 실패 시 먼저 `systemctl status stockcalc`와 `journalctl -u stockcalc`를 확인합니다.
