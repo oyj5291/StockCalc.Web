@@ -37,7 +37,7 @@ dotnet build .\StockCalc.Web\StockCalc.Web.csproj
 
 ## 배포 준비
 
-Oracle Cloud Ubuntu VM 배포 절차는 [deploy/oracle-cloud.md](deploy/oracle-cloud.md)를 참고하세요.
+Oracle Cloud Ubuntu VM 배포 절차는 [deploy/README.md](deploy/README.md)를 참고하세요.
 
 ## Git 원격 저장소
 
