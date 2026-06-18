@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stockcalc.ai.kr/sitemap.xml
