@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="주식 수익률, 평단가, 물타기, 손절가, 목표가, 배당금, 복리 수익률을 계산하는 정보성 투자 계산기 사이트입니다." />
+    <meta name="description" content="@(ViewData["Description"] ?? "주식 수익률, 평단가, 물타기, 손절가, 목표가, 배당금, 복리 수익률을 계산하는 정보성 투자 계산기 사이트입니다.")" />
     <title>@ViewData["Title"] | 주식계산연구소</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -17,6 +17,7 @@
             <a asp-controller="Calculators" asp-action="Profit">수익률</a>
             <a asp-controller="Calculators" asp-action="AveragePrice">평단가</a>
             <a asp-controller="Calculators" asp-action="WaterAverage">물타기</a>
+            <a asp-controller="Calculators" asp-action="StopLoss">손절가</a>
             <a asp-controller="Articles" asp-action="BasicStockReturn">투자기초</a>
         </nav>
     </header>
