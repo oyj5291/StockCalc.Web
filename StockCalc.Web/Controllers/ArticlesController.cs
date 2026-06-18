@@ -13,4 +13,9 @@ public class ArticlesController : Controller
     {
         return View();
     }
+
+    public IActionResult StockBacktestGuide()
+    {
+        return View();
+    }
 }
