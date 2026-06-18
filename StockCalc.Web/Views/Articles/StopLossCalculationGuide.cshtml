@@ -1,0 +1,215 @@
+@{
+    ViewData["Title"] = "손절가 계산하는 방법";
+    ViewData["Description"] = "매수가와 허용 손실률을 이용한 손절가 계산 공식과 손실금액 기준 계산법을 설명합니다.";
+}
+<article class="content article-content">
+  <p>
+    주식을 매수하기 전에 “얼마까지 하락하면 매도할 것인가?”를 정해 두면 감정적인 대응을 줄이는 데 도움이 됩니다.
+    이때 기준이 되는 가격이 <strong>손절가</strong>입니다.
+  </p>
+
+  <p style="padding:14px 16px; border-left:4px solid #0f7b8c; background:#eef8fa; color:#23404a;">
+    이 글은 손절가 계산 방법을 설명하는 정보성 콘텐츠입니다. 특정 종목의 매수·매도 추천이나 투자 권유가 아닙니다.
+  </p>
+
+  <h2>손절가란?</h2>
+  <p>
+    손절가는 매수가보다 주가가 일정 비율 또는 일정 금액 하락했을 때 손실을 제한하기 위해 정하는 매도 기준 가격입니다.
+    예를 들어 50,000원에 매수한 주식의 최대 허용 손실률을 10%로 정했다면 손절가는 45,000원입니다.
+  </p>
+  <p>
+    손절가를 정한다고 손실을 완전히 막을 수 있는 것은 아닙니다.
+    주가가 급락하거나 거래가 원하는 가격에 체결되지 않으면 실제 매도 가격은 미리 정한 손절가보다 낮아질 수 있습니다.
+  </p>
+
+  <h2>손실률로 손절가 계산하는 공식</h2>
+  <p>매수가와 허용 손실률을 알고 있다면 다음 공식으로 손절가를 계산할 수 있습니다.</p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>손절가 = 매수가 × (1 - 손실률 ÷ 100)</strong>
+  </div>
+
+  <p>1주당 예상손실은 다음과 같습니다.</p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>1주당 예상손실 = 매수가 - 손절가</strong>
+  </div>
+
+  <h2>손절가 계산 예시</h2>
+  <p>50,000원에 매수한 주식의 손실 허용률을 10%로 정했다고 가정해 보겠습니다.</p>
+  <ul>
+    <li>매수가: 50,000원</li>
+    <li>허용 손실률: 10%</li>
+    <li>손절가: 50,000원 × (1 - 0.1) = <strong>45,000원</strong></li>
+    <li>1주당 예상손실: 50,000원 - 45,000원 = <strong>5,000원</strong></li>
+  </ul>
+
+  <p>100주를 보유하고 있다면 수수료와 세금을 제외한 총 예상손실은 500,000원입니다.</p>
+
+  <div style="margin:20px 0; padding:20px; border:1px solid #123a63; border-radius:6px; background:#ffffff;">
+    <h2 style="margin-top:0;">손절가 직접 계산하기</h2>
+    <p>매수가와 허용 손실률을 입력하면 손절가와 1주당 예상손실을 바로 확인할 수 있습니다.</p>
+    <p style="margin-bottom:0;">
+      <a href="https://stockcalc.ai.kr/Calculators/StopLoss" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:11px 18px; border-radius:6px; background:#123a63; color:#ffffff; text-decoration:none; font-weight:bold;">손절가 계산기 바로가기</a>
+    </p>
+  </div>
+
+  <h2>손실률별 손절가 비교</h2>
+  <p>매수가가 50,000원일 때 허용 손실률에 따른 손절가는 다음과 같습니다.</p>
+
+  <div style="overflow-x:auto; margin:16px 0;">
+    <table style="width:100%; min-width:560px; border-collapse:collapse; border:1px solid #dce3ed;">
+      <thead>
+        <tr style="background:#f5f7fb;">
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:center;">허용 손실률</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">손절가</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">1주당 예상손실</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">100주 예상손실</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">3%</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">48,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">1,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">150,000원</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">5%</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">47,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">2,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">250,000원</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">7%</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">46,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">3,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">350,000원</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">10%</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">45,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">5,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">500,000원</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">15%</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">42,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">7,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">750,000원</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>금액을 기준으로 손절가 계산하는 방법</h2>
+  <p>손실률이 아니라 감당할 수 있는 최대 손실금액을 먼저 정했다면 다음 순서로 계산할 수 있습니다.</p>
+  <ol>
+    <li>최대 손실금액을 보유 수량으로 나누어 1주당 허용 손실을 구합니다.</li>
+    <li>매수가에서 1주당 허용 손실을 뺍니다.</li>
+  </ol>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>손절가 = 매수가 - (최대 손실금액 ÷ 보유 수량)</strong>
+  </div>
+
+  <p>
+    예를 들어 50,000원에 100주를 매수했고 최대 300,000원까지만 손실을 허용한다면 1주당 허용 손실은 3,000원입니다.
+    따라서 손절가는 47,000원이 됩니다.
+  </p>
+
+  <h2>목표수익과 손실을 함께 비교하기</h2>
+  <p>
+    손절가는 목표가와 함께 정하면 전략의 손익 구조를 확인하기 쉽습니다.
+    예를 들어 50,000원에 매수해 목표가를 55,000원, 손절가를 47,500원으로 정했다면 1주당 기대수익은 5,000원이고 예상손실은 2,500원입니다.
+  </p>
+  <p>이 경우 기대수익과 예상손실의 비율은 2대 1입니다.</p>
+  <ul>
+    <li>매수가: 50,000원</li>
+    <li>목표가: 55,000원</li>
+    <li>손절가: 47,500원</li>
+    <li>1주당 기대수익: 5,000원</li>
+    <li>1주당 예상손실: 2,500원</li>
+    <li><strong>손익비: 2:1</strong></li>
+  </ul>
+  <p>
+    원하는 수익률에 따른 매도 가격은
+    <a href="https://stockcalc.ai.kr/Calculators/TargetPrice" target="_blank" rel="noopener noreferrer"><strong>목표가 계산기</strong></a>에서 확인할 수 있습니다.
+  </p>
+
+  <h2>손절률은 몇 퍼센트가 적당할까?</h2>
+  <p>
+    모든 종목과 투자자에게 동일하게 적용되는 손절률은 없습니다.
+    주가 변동성, 투자 기간, 매매 전략과 감당할 수 있는 손실 규모에 따라 달라집니다.
+  </p>
+  <ul>
+    <li><strong>변동성이 큰 종목:</strong> 손절 범위가 너무 좁으면 일시적인 움직임에도 매도될 수 있습니다.</li>
+    <li><strong>단기 매매:</strong> 진입 근거가 사라지는 가격과 짧은 보유 기간을 함께 고려합니다.</li>
+    <li><strong>장기 투자:</strong> 단순 가격 하락뿐 아니라 실적과 투자 판단의 변화도 확인해야 합니다.</li>
+    <li><strong>투자 비중:</strong> 손절 폭이 넓다면 매수 수량을 줄여 총 예상손실을 관리할 수 있습니다.</li>
+  </ul>
+
+  <h2>매수 수량도 함께 계산해야 하는 이유</h2>
+  <p>
+    같은 10% 손절이라도 10주를 보유한 경우와 1,000주를 보유한 경우의 손실금액은 크게 다릅니다.
+    따라서 손절률만 정하지 말고 손절가에 도달했을 때 발생할 총 손실금액도 확인해야 합니다.
+  </p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>총 예상손실 = (매수가 - 손절가) × 보유 수량</strong>
+  </div>
+
+  <p>
+    매수와 매도 가격, 보유 수량, 수수료와 세금을 반영한 실제 순손익은
+    <a href="https://stockcalc.ai.kr/Calculators/Profit" target="_blank" rel="noopener noreferrer"><strong>주식 수익률 계산기</strong></a>로 계산할 수 있습니다.
+  </p>
+
+  <h2>손절 주문 시 주의할 점</h2>
+  <ul>
+    <li>주가가 급락하면 정한 손절가보다 낮은 가격에 체결될 수 있습니다.</li>
+    <li>거래량이 적은 종목은 원하는 가격에 매도하기 어려울 수 있습니다.</li>
+    <li>장중 가격과 종가 중 어떤 기준을 사용할지 미리 정하는 것이 좋습니다.</li>
+    <li>추가 매수 후 평균단가가 바뀌면 손절가와 총 예상손실도 다시 계산해야 합니다.</li>
+    <li>증권사의 자동감시주문이나 예약주문 조건은 계좌별로 확인해야 합니다.</li>
+  </ul>
+
+  <h2>자주 묻는 질문</h2>
+
+  <h3>매수가 70,000원에서 10% 손절가는 얼마일까?</h3>
+  <p>70,000원 × 0.9 = 63,000원이므로 손절가는 63,000원입니다. 1주당 예상손실은 7,000원입니다.</p>
+
+  <h3>매수가 50,000원에서 5% 손절가는 얼마일까?</h3>
+  <p>50,000원 × 0.95 = 47,500원이므로 손절가는 47,500원입니다.</p>
+
+  <h3>평단가가 바뀌면 손절가도 바뀔까?</h3>
+  <p>
+    평균단가를 기준으로 손실률을 계산한다면 손절가도 달라집니다.
+    추가 매수 후에는
+    <a href="https://stockcalc.ai.kr/Calculators/AveragePrice" target="_blank" rel="noopener noreferrer">평단가 계산기</a>로 새로운 평균단가를 먼저 확인한 뒤 손절가를 다시 계산해야 합니다.
+  </p>
+
+  <h3>손절가에 도달하면 반드시 매도해야 할까?</h3>
+  <p>
+    손절가는 투자자가 정한 위험관리 기준입니다. 실제 매도 여부는 본인의 전략과 판단에 따라 결정해야 합니다.
+    중요한 점은 매수 전에 기준을 정하고, 기준을 변경할 때도 명확한 이유를 갖는 것입니다.
+  </p>
+
+  <h2>정리</h2>
+  <p>
+    손절가는 <strong>매수가 × (1 - 허용 손실률)</strong>로 계산할 수 있습니다.
+    50,000원에 매수한 주식의 손실 허용률이 10%라면 손절가는 45,000원입니다.
+  </p>
+  <p>
+    손절가만 확인하지 말고 보유 수량을 반영한 총 예상손실, 목표수익과의 손익비, 수수료와 실제 체결 가능성도 함께 검토하는 것이 중요합니다.
+  </p>
+
+  <div style="margin-top:28px; padding:20px; border:1px solid #dce3ed; border-radius:6px; background:#f8fafc;">
+    <h2 style="margin-top:0;">관련 주식 계산기</h2>
+    <ul style="margin-bottom:0;">
+      <li><a href="https://stockcalc.ai.kr/Calculators/StopLoss" target="_blank" rel="noopener noreferrer"><strong>손절가 계산기</strong></a> - 허용 손실률에 따른 손절 가격 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/TargetPrice" target="_blank" rel="noopener noreferrer"><strong>목표가 계산기</strong></a> - 목표수익률에 따른 매도 가격 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/Profit" target="_blank" rel="noopener noreferrer"><strong>주식 수익률 계산기</strong></a> - 수수료와 세금을 반영한 순손익 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/AveragePrice" target="_blank" rel="noopener noreferrer"><strong>평단가 계산기</strong></a> - 추가 매수 후 새로운 평균단가 계산</li>
+    </ul>
+  </div>
+</article>

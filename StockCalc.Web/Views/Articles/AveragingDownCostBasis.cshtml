@@ -1,0 +1,318 @@
+@{
+    ViewData["Title"] = "물타기하면 평단가가 얼마나 낮아질까?";
+    ViewData["Description"] = "현재 평단가와 보유 수량, 추가 매수가에 따라 물타기 후 새로운 평균단가를 계산하는 방법을 설명합니다.";
+}
+<article class="content article-content">
+  <p>
+    보유한 주식의 가격이 하락했을 때 더 낮은 가격으로 추가 매수하면 평균단가를 낮출 수 있습니다.
+    흔히 이를 <strong>물타기</strong>라고 부릅니다. 그렇다면 추가 매수 후 평단가는 정확히 얼마나 낮아질까요?
+  </p>
+
+  <p style="padding:14px 16px; border-left:4px solid #0f7b8c; background:#eef8fa; color:#23404a;">
+    이 글은 평균단가 계산 방법을 설명하는 정보성 콘텐츠입니다. 물타기는 투자금과 손실 규모를 키울 수 있으며, 특정 종목의 추가 매수를 권유하는 내용이 아닙니다.
+  </p>
+
+  <h2>물타기란?</h2>
+  <p>
+    물타기는 현재 주가가 기존 평균단가보다 낮을 때 같은 종목을 추가로 매수해 전체 보유 주식의 평균단가를 낮추는 방법입니다.
+    예를 들어 50,000원에 매수한 주식을 40,000원에 추가 매수하면 새로운 평균단가는 50,000원보다 낮아집니다.
+  </p>
+  <p>
+    다만 현재가가 평균단가보다 낮다는 이유만으로 평단가가 자동으로 크게 내려가는 것은 아닙니다.
+    기존 수량과 추가 수량의 비율에 따라 낮아지는 정도가 달라집니다.
+  </p>
+
+  <h2>물타기 후 평단가 계산 공식</h2>
+  <p>추가 매수 후 새로운 평균단가는 기존 매수금액과 추가 매수금액을 합한 뒤 총 보유 수량으로 나누어 계산합니다.</p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>새 평단가 = (기존 평단가 × 기존 수량 + 추가 매수가 × 추가 수량) ÷ (기존 수량 + 추가 수량)</strong>
+  </div>
+
+  <p>평단가가 낮아진 금액과 비율은 다음과 같이 계산할 수 있습니다.</p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>평단가 하락액 = 기존 평단가 - 새 평단가</strong><br />
+    <strong>평단가 하락률 = 평단가 하락액 ÷ 기존 평단가 × 100</strong>
+  </div>
+
+  <h2>같은 수량을 추가 매수하는 예시</h2>
+  <p>50,000원에 10주를 보유한 상태에서 40,000원에 10주를 추가 매수한다고 가정해 보겠습니다.</p>
+
+  <ul>
+    <li>기존 매수금액: 50,000원 × 10주 = 500,000원</li>
+    <li>추가 매수금액: 40,000원 × 10주 = 400,000원</li>
+    <li>총 매수금액: 900,000원</li>
+    <li>총 보유 수량: 20주</li>
+    <li><strong>새 평단가: 900,000원 ÷ 20주 = 45,000원</strong></li>
+  </ul>
+
+  <p>
+    기존 수량과 같은 10주를 추가 매수하면 평단가는 50,000원에서 45,000원으로 5,000원 낮아집니다.
+    평단가 하락률은 10%입니다.
+  </p>
+
+  <div style="margin:20px 0; padding:20px; border:1px solid #123a63; border-radius:6px; background:#ffffff;">
+    <h2 style="margin-top:0;">물타기 후 평단가 바로 계산하기</h2>
+    <p>현재 평균단가, 보유 수량, 추가 매수가와 추가매수금액을 입력하면 새로운 평균단가를 확인할 수 있습니다.</p>
+    <p style="margin-bottom:0;">
+      <a href="https://stockcalc.ai.kr/Calculators/WaterAverage" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:11px 18px; border-radius:6px; background:#123a63; color:#ffffff; text-decoration:none; font-weight:bold;">물타기 계산기 바로가기</a>
+    </p>
+  </div>
+
+  <h2>추가 매수 수량에 따른 평단가 비교</h2>
+  <p>기존 평단가 50,000원, 기존 보유 수량 10주, 추가 매수가 40,000원을 기준으로 비교한 예시입니다.</p>
+
+  <div style="overflow-x:auto; margin:16px 0;">
+    <table style="width:100%; min-width:650px; border-collapse:collapse; border:1px solid #dce3ed;">
+      <thead>
+        <tr style="background:#f5f7fb;">
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:center;">추가 수량</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">추가 매수금액</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">총 보유 수량</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">새 평단가</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">평단가 하락액</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">5주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">200,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">15주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>약 46,667원</strong></td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">약 3,333원</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">10주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">400,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">20주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>45,000원</strong></td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">5,000원</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">20주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">800,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">30주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>약 43,333원</strong></td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">약 6,667원</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">30주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">1,200,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">40주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>42,500원</strong></td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">7,500원</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    추가 수량이 많을수록 평단가는 추가 매수가인 40,000원에 가까워집니다.
+    하지만 동시에 해당 종목에 투입되는 총 투자금과 보유 비중도 빠르게 커집니다.
+  </p>
+
+  <h2>추가매수금액으로 계산하는 방법</h2>
+  <p>추가 수량이 아니라 사용할 금액을 정해 놓았다면 먼저 매수 가능한 수량을 계산합니다.</p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>추가 매수 수량 = 추가매수금액 ÷ 현재가</strong>
+  </div>
+
+  <p>
+    예를 들어 현재가가 40,000원이고 추가매수금액이 1,000,000원이라면 수수료와 주문 단위를 제외한 단순 계산으로 25주를 매수할 수 있습니다.
+  </p>
+  <ul>
+    <li>기존 평균단가: 50,000원</li>
+    <li>기존 수량: 10주</li>
+    <li>현재가: 40,000원</li>
+    <li>추가매수금액: 1,000,000원</li>
+    <li>추가 수량: 25주</li>
+    <li>총 보유 수량: 35주</li>
+    <li><strong>새 평단가: 약 42,857원</strong></li>
+  </ul>
+
+  <h2>추가 매수 가격이 낮을수록 평단가는 얼마나 달라질까?</h2>
+  <p>기존 평단가 50,000원에 10주를 보유하고, 같은 수량인 10주를 추가 매수한다고 가정한 예시입니다.</p>
+
+  <div style="overflow-x:auto; margin:16px 0;">
+    <table style="width:100%; min-width:600px; border-collapse:collapse; border:1px solid #dce3ed;">
+      <thead>
+        <tr style="background:#f5f7fb;">
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">추가 매수가</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">새 평단가</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">평단가 하락액</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">평단가 하락률</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">47,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>48,750원</strong></td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">1,250원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">2.5%</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">45,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>47,500원</strong></td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">2,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">5%</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">40,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>45,000원</strong></td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">5,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">10%</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">35,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>42,500원</strong></td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">7,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">15%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    기존 수량과 추가 수량이 같다면 새로운 평단가는 두 매수가의 중간값이 됩니다.
+    수량이 다르면 단순 평균이 아니라 각 가격과 수량을 반영한 가중평균으로 계산해야 합니다.
+  </p>
+
+  <h2>원금 회복에 필요한 상승률</h2>
+  <p>
+    평단가가 낮아지면 현재가에서 원금 회복까지 필요한 상승률도 낮아집니다.
+    필요한 상승률은 다음과 같이 계산합니다.
+  </p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>원금 회복 필요 상승률 = (평단가 - 현재가) ÷ 현재가 × 100</strong>
+  </div>
+
+  <p>현재가가 40,000원일 때를 비교해 보겠습니다.</p>
+  <ul>
+    <li>기존 평단가 50,000원: 원금 회복에 25% 상승 필요</li>
+    <li>물타기 후 평단가 45,000원: 원금 회복에 12.5% 상승 필요</li>
+  </ul>
+  <p>
+    평단가는 낮아졌지만 총 투자금은 500,000원에서 900,000원으로 늘었습니다.
+    회복에 필요한 상승률이 낮아진 대신 더 많은 자금이 같은 종목에 노출된 것입니다.
+  </p>
+
+  <h2>평단가가 낮아져도 평가손실은 바로 줄지 않는다</h2>
+  <p>
+    현재가가 40,000원이고 기존 평단가 50,000원에 10주를 보유했다면 평가손실은 100,000원입니다.
+    40,000원에 10주를 추가 매수한 직후에는 새 평단가가 45,000원이 되지만 현재 평가손실은 여전히 약 100,000원입니다.
+  </p>
+  <ul>
+    <li>추가 매수 전: (40,000원 - 50,000원) × 10주 = -100,000원</li>
+    <li>추가 매수 후: (40,000원 - 45,000원) × 20주 = -100,000원</li>
+  </ul>
+  <p>
+    거래 비용을 제외하면 같은 가격에서 추가 매수하는 순간 기존 손실금액이 사라지는 것은 아닙니다.
+    손실률은 낮아 보일 수 있지만 보유 수량과 투자금이 증가합니다.
+  </p>
+
+  <h2>여러 번 물타기할 때 계산하는 방법</h2>
+  <p>
+    세 번 이상 추가 매수했다면 앞선 계산 결과를 다음 계산의 기존 값으로 사용하면 됩니다.
+  </p>
+  <ol>
+    <li>1차 보유분과 2차 매수분으로 새 평단가와 총 수량을 계산합니다.</li>
+    <li>계산된 새 평단가와 총 수량을 기존 평균단가와 기존 수량으로 입력합니다.</li>
+    <li>3차 매수가와 수량을 추가로 입력합니다.</li>
+    <li>같은 방법을 매수 회차만큼 반복합니다.</li>
+  </ol>
+  <p>
+    수량을 기준으로 정확한 평균단가를 계산하려면
+    <a href="https://stockcalc.ai.kr/Calculators/AveragePrice" target="_blank" rel="noopener noreferrer"><strong>평단가 계산기</strong></a>를 이용할 수 있습니다.
+  </p>
+
+  <h2>목표 평단가를 만들려면 얼마나 사야 할까?</h2>
+  <p>
+    기존 평단가와 현재가 사이에 원하는 목표 평단가가 있다면 필요한 추가 수량을 역산할 수 있습니다.
+  </p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>필요 추가 수량 = 기존 수량 × (기존 평단가 - 목표 평단가) ÷ (목표 평단가 - 추가 매수가)</strong>
+  </div>
+
+  <p>
+    기존 평단가 50,000원에 10주를 보유하고 현재가 40,000원에서 목표 평단가를 45,000원으로 낮추려면 10주를 추가 매수해야 합니다.
+  </p>
+  <p>
+    목표 평단가를 현재가에 지나치게 가깝게 만들려면 매우 많은 추가 자금이 필요할 수 있습니다.
+    계산 전에 해당 종목에 투입할 최대 금액을 먼저 정해야 합니다.
+  </p>
+
+  <h2>물타기 전에 확인할 사항</h2>
+  <ul>
+    <li><strong>하락 원인:</strong> 시장 전체 조정인지 종목의 실적·재무 문제인지 확인합니다.</li>
+    <li><strong>총 투자 한도:</strong> 해당 종목에 추가로 투입할 수 있는 최대 금액을 정합니다.</li>
+    <li><strong>종목 비중:</strong> 추가 매수 후 전체 자산에서 차지하는 비중을 확인합니다.</li>
+    <li><strong>매수 횟수:</strong> 한 번에 모두 사지 않고 몇 회로 나눌지 정합니다.</li>
+    <li><strong>중단 기준:</strong> 투자 판단이 틀렸을 때 추가 매수를 멈출 조건을 정합니다.</li>
+    <li><strong>손실 한도:</strong> 추가 매수 후 주가가 더 하락할 때 감당할 수 있는 손실을 계산합니다.</li>
+  </ul>
+
+  <p>
+    허용 가능한 손실률에 따른 기준 가격은
+    <a href="https://stockcalc.ai.kr/Calculators/StopLoss" target="_blank" rel="noopener noreferrer"><strong>손절가 계산기</strong></a>로 확인할 수 있습니다.
+  </p>
+
+  <h2>물타기와 분할매수의 차이</h2>
+  <p>
+    분할매수는 투자 전에 총 투자금, 매수 횟수와 조건을 정해 여러 번 나누어 매수하는 계획적인 방식입니다.
+    물타기는 매수 후 주가가 하락했을 때 평균단가를 낮추기 위해 추가 매수하는 상황을 가리키는 경우가 많습니다.
+  </p>
+  <p>
+    계획 없이 주가가 떨어질 때마다 계속 추가 매수하면 투자금이 빠르게 늘어날 수 있습니다.
+    물타기를 하더라도 분할매수처럼 최대 금액과 횟수를 사전에 정하는 것이 위험 관리에 도움이 됩니다.
+  </p>
+
+  <h2>자주 묻는 질문</h2>
+
+  <h3>같은 수량을 물타기하면 평단가는 정확히 중간이 될까?</h3>
+  <p>
+    기존 수량과 추가 수량이 같다면 두 매수가의 중간값이 됩니다.
+    50,000원에 10주, 40,000원에 10주를 매수하면 평단가는 45,000원입니다.
+  </p>
+
+  <h3>평단가를 절반으로 낮추려면 같은 금액을 사면 될까?</h3>
+  <p>
+    아닙니다. 새로운 평단가는 추가 매수가보다 낮아질 수 없으며, 현재가가 기존 평단가보다 얼마나 낮은지와 추가 수량에 따라 달라집니다.
+    목표 평단가가 현재가에 가까울수록 더 많은 수량이 필요합니다.
+  </p>
+
+  <h3>물타기하면 손실금액도 바로 줄어들까?</h3>
+  <p>
+    같은 현재가로 추가 매수하는 순간 기존 평가손실이 사라지지는 않습니다.
+    평균단가와 손실률은 낮아지지만 총 투자금과 보유 수량이 늘어납니다.
+  </p>
+
+  <h3>추가매수 수수료도 평단가에 포함해야 할까?</h3>
+  <p>
+    증권사 화면의 평균단가 계산 방식은 수수료 포함 여부에 따라 다를 수 있습니다.
+    정확한 실제 손익을 계산할 때는 매수·매도 수수료와 세금을 함께 반영해야 합니다.
+  </p>
+
+  <h2>정리</h2>
+  <p>
+    물타기 후 평단가는 기존 매수금액과 추가 매수금액을 합한 뒤 총 보유 수량으로 나누어 계산합니다.
+    기존 평단가 50,000원에 10주를 보유한 상태에서 40,000원에 10주를 추가 매수하면 새 평단가는 45,000원이 됩니다.
+  </p>
+  <p>
+    추가 수량이 많고 추가 매수가가 낮을수록 평단가는 더 내려갑니다.
+    하지만 총 투자금과 특정 종목 비중도 함께 증가하므로 평단가 하락만 보지 말고 추가 하락 시 총 손실금액과 투자 한도를 함께 확인해야 합니다.
+  </p>
+
+  <div style="margin-top:28px; padding:20px; border:1px solid #dce3ed; border-radius:6px; background:#f8fafc;">
+    <h2 style="margin-top:0;">관련 주식 계산기</h2>
+    <ul style="margin-bottom:0;">
+      <li><a href="https://stockcalc.ai.kr/Calculators/WaterAverage" target="_blank" rel="noopener noreferrer"><strong>물타기 계산기</strong></a> - 추가매수금액에 따른 수량과 새 평단가 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/AveragePrice" target="_blank" rel="noopener noreferrer"><strong>평단가 계산기</strong></a> - 기존·추가 매수가와 수량을 반영한 평균단가 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/StopLoss" target="_blank" rel="noopener noreferrer"><strong>손절가 계산기</strong></a> - 허용 손실률에 따른 기준 가격 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/Profit" target="_blank" rel="noopener noreferrer"><strong>주식 수익률 계산기</strong></a> - 수수료와 세금을 반영한 순손익 계산</li>
+    </ul>
+  </div>
+</article>

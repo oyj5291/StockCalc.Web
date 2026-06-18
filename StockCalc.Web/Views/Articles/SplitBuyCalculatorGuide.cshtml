@@ -1,0 +1,202 @@
+@{
+    ViewData["Title"] = "분할매수 계산기 사용법";
+    ViewData["Description"] = "분할매수 후 총 투자금, 보유 수량과 새로운 평균단가를 계산하는 방법을 예시와 함께 설명합니다.";
+}
+<article class="content article-content">
+  <p>
+    주식을 한 번에 모두 매수하지 않고 여러 번 나누어 사는 방법을 <strong>분할매수</strong>라고 합니다.
+    분할매수 계산기를 활용하면 각 회차의 매수가와 수량을 기준으로 총 투자금, 총 보유 수량과 평균단가를 미리 확인할 수 있습니다.
+  </p>
+
+  <p style="padding:14px 16px; border-left:4px solid #0f7b8c; background:#eef8fa; color:#23404a;">
+    이 글은 계산기 사용 방법을 설명하는 정보성 콘텐츠입니다. 특정 종목 추천이나 매수·매도 권유가 아닙니다.
+  </p>
+
+  <h2>분할매수란?</h2>
+  <p>
+    분할매수는 투자하려는 전체 금액을 여러 회차로 나누어 매수하는 방식입니다.
+    예를 들어 300만 원을 투자할 계획이라면 처음부터 300만 원을 모두 매수하는 대신 100만 원씩 세 번에 나누어 매수할 수 있습니다.
+  </p>
+  <p>
+    매수 시점을 나누면 특정 가격에 모든 자금을 투입하는 위험을 줄일 수 있습니다.
+    다만 주가가 계속 하락하면 투자금과 손실 규모가 함께 커질 수 있으므로 매수 횟수, 총 투자 한도와 중단 조건을 미리 정하는 것이 중요합니다.
+  </p>
+
+  <h2>분할매수 계산에 필요한 값</h2>
+  <p>분할매수 후 평균단가를 계산하려면 각 회차의 매수가와 수량이 필요합니다.</p>
+  <ul>
+    <li><strong>기존 매수가:</strong> 먼저 매수한 주식의 1주당 가격</li>
+    <li><strong>기존 수량:</strong> 현재 보유한 주식 수</li>
+    <li><strong>추가 매수가:</strong> 다음 회차에 매수할 1주당 가격</li>
+    <li><strong>추가 수량:</strong> 다음 회차에 매수할 주식 수</li>
+  </ul>
+
+  <div style="margin:18px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>새 평균단가 = 총 매수금액 ÷ 총 보유 수량</strong>
+  </div>
+
+  <h2>평단가 계산기로 분할매수 계산하는 방법</h2>
+  <p>
+    주식계산연구소의
+    <a href="https://stockcalc.ai.kr/Calculators/AveragePrice" target="_blank" rel="noopener noreferrer"><strong>평단가 계산기</strong></a>를 이용하면
+    기존 보유분과 다음 매수분을 합산한 새로운 평균단가를 계산할 수 있습니다.
+  </p>
+
+  <ol>
+    <li><a href="https://stockcalc.ai.kr/Calculators/AveragePrice" target="_blank" rel="noopener noreferrer">평단가 계산기</a>를 엽니다.</li>
+    <li><strong>기존 매수가</strong>에 현재 평균단가를 입력합니다.</li>
+    <li><strong>기존 수량</strong>에 현재 보유 수량을 입력합니다.</li>
+    <li><strong>추가 매수가</strong>에 다음 매수 예정 가격을 입력합니다.</li>
+    <li><strong>추가 수량</strong>에 다음 회차의 매수 수량을 입력합니다.</li>
+    <li><strong>계산하기</strong>를 눌러 총 보유 수량, 총 매수금액과 새로운 평균단가를 확인합니다.</li>
+  </ol>
+
+  <div style="margin:20px 0; padding:20px; border:1px solid #123a63; border-radius:6px; background:#ffffff;">
+    <h2 style="margin-top:0;">분할매수 후 평단가 계산하기</h2>
+    <p>현재 보유분과 추가 매수분을 입력하면 새로운 평균단가를 바로 확인할 수 있습니다.</p>
+    <p style="margin-bottom:0;">
+      <a href="https://stockcalc.ai.kr/Calculators/AveragePrice" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:11px 18px; border-radius:6px; background:#123a63; color:#ffffff; text-decoration:none; font-weight:bold;">평단가 계산기 바로가기</a>
+    </p>
+  </div>
+
+  <h2>분할매수 계산 예시</h2>
+  <p>한 종목을 다음과 같이 두 번 매수했다고 가정해 보겠습니다.</p>
+
+  <ul>
+    <li>1차 매수: 50,000원에 10주</li>
+    <li>2차 매수: 45,000원에 10주</li>
+  </ul>
+
+  <p>1차 매수금액은 500,000원이고 2차 매수금액은 450,000원입니다.</p>
+
+  <div style="overflow-x:auto; margin:16px 0;">
+    <table style="width:100%; min-width:560px; border-collapse:collapse; border:1px solid #dce3ed;">
+      <thead>
+        <tr style="background:#f5f7fb;">
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:left;">구분</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">매수가</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">수량</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">매수금액</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed;">1차 매수</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">50,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">10주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">500,000원</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed;">2차 매수</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">45,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">10주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">450,000원</td>
+        </tr>
+        <tr style="background:#f8fafc;">
+          <td style="padding:10px; border:1px solid #dce3ed;"><strong>합계</strong></td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">-</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>20주</strong></td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>950,000원</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>새로운 평균단가는 다음과 같습니다.</p>
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>950,000원 ÷ 20주 = 47,500원</strong>
+  </div>
+  <p>따라서 두 번의 매수 후 총 보유 수량은 20주, 총 매수금액은 950,000원, 평균단가는 47,500원이 됩니다.</p>
+
+  <h2>추가매수 금액으로 계산하는 방법</h2>
+  <p>
+    다음 회차의 수량이 아니라 투자 금액만 정해 놓은 경우에는
+    <a href="https://stockcalc.ai.kr/Calculators/WaterAverage" target="_blank" rel="noopener noreferrer"><strong>물타기 계산기</strong></a>를 이용할 수 있습니다.
+  </p>
+  <p>물타기 계산기에는 다음 값을 입력합니다.</p>
+  <ol>
+    <li>현재 평균단가</li>
+    <li>현재 보유 수량</li>
+    <li>추가 매수할 때의 현재가</li>
+    <li>추가매수금액</li>
+  </ol>
+  <p>계산 결과로 추가 매수 가능한 수량, 총 보유 수량과 새로운 평균단가를 확인할 수 있습니다.</p>
+
+  <h2>동일 금액과 동일 수량의 차이</h2>
+  <p>분할매수 방식은 크게 동일 금액 매수와 동일 수량 매수로 나눌 수 있습니다.</p>
+
+  <h3>동일 금액 분할매수</h3>
+  <p>
+    각 회차에 같은 금액을 투자하는 방식입니다. 가격이 낮을 때 더 많은 수량을 사고 가격이 높을 때 적은 수량을 사게 됩니다.
+    예산 관리가 쉽지만 회차별 수량은 달라집니다.
+  </p>
+
+  <h3>동일 수량 분할매수</h3>
+  <p>
+    각 회차에 같은 수량을 매수하는 방식입니다. 계산은 간단하지만 주가가 높을 때 더 많은 금액이 필요하므로 총 투자금이 계획과 달라질 수 있습니다.
+  </p>
+
+  <h2>분할매수 계획을 세울 때 확인할 항목</h2>
+  <ul>
+    <li><strong>총 투자 한도:</strong> 해당 종목에 투입할 최대 금액</li>
+    <li><strong>매수 횟수:</strong> 전체 자금을 몇 회로 나눌지</li>
+    <li><strong>매수 조건:</strong> 일정 기간마다 살지, 가격이 하락할 때 살지</li>
+    <li><strong>회차별 비중:</strong> 같은 금액으로 살지, 비중을 다르게 할지</li>
+    <li><strong>중단 조건:</strong> 투자 판단이 틀렸을 때 추가 매수를 멈출 기준</li>
+    <li><strong>손실 한도:</strong> 감당할 수 있는 최대 손실 금액과 손실률</li>
+  </ul>
+
+  <p>
+    허용 가능한 손실률에 따른 기준 가격은
+    <a href="https://stockcalc.ai.kr/Calculators/StopLoss" target="_blank" rel="noopener noreferrer"><strong>손절가 계산기</strong></a>로 확인할 수 있습니다.
+  </p>
+
+  <h2>분할매수와 물타기는 같은 뜻일까?</h2>
+  <p>
+    두 방법은 여러 번 매수한다는 점에서는 비슷하지만 계획 여부에 차이가 있습니다.
+    분할매수는 매수 전부터 전체 투자금, 횟수와 조건을 정해 놓는 방식입니다.
+    물타기는 매수 후 주가가 하락했을 때 평균단가를 낮추기 위해 추가로 매수하는 상황을 가리키는 경우가 많습니다.
+  </p>
+  <p>
+    계획 없이 평균단가만 낮추려고 계속 추가 매수하면 특정 종목의 투자 비중이 지나치게 커질 수 있습니다.
+    평균단가가 낮아지는 것과 투자 위험이 낮아지는 것은 같지 않습니다.
+  </p>
+
+  <h2>자주 묻는 질문</h2>
+
+  <h3>세 번 이상 매수했을 때는 어떻게 계산할까?</h3>
+  <p>
+    1차와 2차 매수 결과로 나온 새로운 평균단가와 총 수량을 기존 값으로 입력한 뒤, 3차 매수가와 수량을 추가로 입력하면 됩니다.
+    같은 방법을 반복하면 여러 회차의 평균단가를 순서대로 계산할 수 있습니다.
+  </p>
+
+  <h3>평단가는 매수가를 단순히 더해서 나누면 될까?</h3>
+  <p>
+    각 회차의 수량이 모두 같다면 단순 평균과 결과가 같습니다. 하지만 수량이 다르면 반드시 각 매수가에 수량을 곱한 매수금액을 합산한 뒤 총 수량으로 나누어야 합니다.
+  </p>
+
+  <h3>분할매수를 하면 손실을 피할 수 있을까?</h3>
+  <p>
+    아닙니다. 분할매수는 매수 가격이 한 시점에 집중되는 위험을 줄일 수 있지만 주가 하락 자체를 막지는 못합니다.
+    종목 선택이 잘못되거나 하락이 계속되면 손실이 커질 수 있습니다.
+  </p>
+
+  <h2>정리</h2>
+  <p>
+    분할매수 계산기의 핵심은 각 회차의 매수가와 수량을 합산해 총 투자금과 새로운 평균단가를 확인하는 것입니다.
+    수량을 기준으로 추가 매수한다면 평단가 계산기를, 금액을 기준으로 추가 매수한다면 물타기 계산기를 이용할 수 있습니다.
+  </p>
+  <p>
+    계산 결과만 보고 추가 매수를 결정하기보다 총 투자 한도, 매수 횟수와 손실 제한 기준을 먼저 정하는 것이 중요합니다.
+  </p>
+
+  <div style="margin-top:28px; padding:20px; border:1px solid #dce3ed; border-radius:6px; background:#f8fafc;">
+    <h2 style="margin-top:0;">관련 주식 계산기</h2>
+    <ul style="margin-bottom:0;">
+      <li><a href="https://stockcalc.ai.kr/Calculators/AveragePrice" target="_blank" rel="noopener noreferrer"><strong>평단가 계산기</strong></a> - 매수가와 수량을 기준으로 새로운 평균단가 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/WaterAverage" target="_blank" rel="noopener noreferrer"><strong>물타기 계산기</strong></a> - 추가매수금액을 기준으로 수량과 평균단가 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/StopLoss" target="_blank" rel="noopener noreferrer"><strong>손절가 계산기</strong></a> - 허용 손실률에 따른 기준 가격 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/Profit" target="_blank" rel="noopener noreferrer"><strong>주식 수익률 계산기</strong></a> - 수수료와 세금을 반영한 순손익 계산</li>
+    </ul>
+  </div>
+</article>

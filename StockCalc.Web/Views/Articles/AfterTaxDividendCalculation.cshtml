@@ -1,0 +1,259 @@
+@{
+    ViewData["Title"] = "배당금 세후 수령액 계산";
+    ViewData["Description"] = "보유 수량과 1주당 배당금, 적용 세율로 세전 배당금과 세후 수령액을 계산하는 방법을 설명합니다.";
+}
+<article class="content article-content">
+  <p>
+    주식 배당금이 지급될 때는 공시된 배당금 전액이 계좌에 들어오는 것이 아니라 세금이 원천징수된 뒤 남은 금액이 입금될 수 있습니다.
+    따라서 배당 투자를 계획할 때는 세전 배당금과 <strong>세후 실수령액</strong>을 구분해서 계산해야 합니다.
+  </p>
+
+  <p style="padding:14px 16px; border-left:4px solid #0f7b8c; background:#eef8fa; color:#23404a;">
+    이 글은 배당금 계산 방법을 설명하기 위한 정보성 콘텐츠입니다. 실제 적용 세율은 계좌 종류, 배당 유형, 거주자 여부와 세법 개정에 따라 달라질 수 있으므로 지급 내역과 최신 세법을 확인해야 합니다.
+  </p>
+
+  <h2>세전 배당금 계산 공식</h2>
+  <p>세전 배당금은 보유 수량에 1주당 배당금을 곱해서 계산합니다.</p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>세전 배당금 = 보유 수량 × 1주당 배당금</strong>
+  </div>
+
+  <p>
+    예를 들어 1주당 배당금이 1,000원인 주식을 100주 보유하고 있다면 세전 배당금은 100,000원입니다.
+  </p>
+  <ul>
+    <li>보유 수량: 100주</li>
+    <li>1주당 배당금: 1,000원</li>
+    <li><strong>세전 배당금: 100,000원</strong></li>
+  </ul>
+
+  <h2>배당금 세후 수령액 계산 공식</h2>
+  <p>적용 세율을 알고 있다면 세금과 세후 배당금은 다음 공식으로 계산할 수 있습니다.</p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>배당 관련 세금 = 세전 배당금 × 적용 세율</strong><br />
+    <strong>세후 배당금 = 세전 배당금 - 배당 관련 세금</strong>
+  </div>
+
+  <p>
+    국내 현금배당에 일반적으로 적용되는 15.4%의 원천징수 세율을 가정하면 세후 배당금은 세전 배당금의 84.6%로 계산할 수 있습니다.
+  </p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>15.4% 가정 시 세후 배당금 = 세전 배당금 × 0.846</strong>
+  </div>
+
+  <p>
+    여기서 15.4%는 일반적인 국내 배당 계산 예시에 사용하는 세율입니다.
+    모든 배당과 계좌에 동일하게 적용되는 것은 아니므로 실제 세율은 증권사 지급 내역과 최신 세법을 확인해야 합니다.
+  </p>
+
+  <h2>배당금 세후 수령액 계산 예시</h2>
+  <p>세전 배당금이 100,000원이고 적용 세율을 15.4%로 가정하면 다음과 같습니다.</p>
+  <ul>
+    <li>세전 배당금: 100,000원</li>
+    <li>세금: 100,000원 × 15.4% = 15,400원</li>
+    <li><strong>세후 수령액: 84,600원</strong></li>
+  </ul>
+
+  <div style="margin:20px 0; padding:20px; border:1px solid #123a63; border-radius:6px; background:#ffffff;">
+    <h2 style="margin-top:0;">배당금 세후 수령액 바로 계산하기</h2>
+    <p>보유 수량, 1주당 배당금과 적용 세율을 입력하면 세전 배당금, 세금과 세후 배당금을 확인할 수 있습니다.</p>
+    <p style="margin-bottom:0;">
+      <a href="https://stockcalc.ai.kr/Calculators/Dividend" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:11px 18px; border-radius:6px; background:#123a63; color:#ffffff; text-decoration:none; font-weight:bold;">배당금 계산기 바로가기</a>
+    </p>
+  </div>
+
+  <h2>세전 배당금별 세후 수령액</h2>
+  <p>적용 세율을 15.4%로 가정한 계산 예시입니다.</p>
+
+  <div style="overflow-x:auto; margin:16px 0;">
+    <table style="width:100%; min-width:560px; border-collapse:collapse; border:1px solid #dce3ed;">
+      <thead>
+        <tr style="background:#f5f7fb;">
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">세전 배당금</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">세금(15.4% 가정)</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">세후 수령액</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">10,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">1,540원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>8,460원</strong></td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">50,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">7,700원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>42,300원</strong></td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">100,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">15,400원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>84,600원</strong></td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">500,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">77,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>423,000원</strong></td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">1,000,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">154,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>846,000원</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>보유 수량별 배당금 계산 예시</h2>
+  <p>1주당 배당금이 1,500원이고 세율을 15.4%로 가정한 예시입니다.</p>
+
+  <div style="overflow-x:auto; margin:16px 0;">
+    <table style="width:100%; min-width:620px; border-collapse:collapse; border:1px solid #dce3ed;">
+      <thead>
+        <tr style="background:#f5f7fb;">
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:center;">보유 수량</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">세전 배당금</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">예상 세금</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">세후 수령액</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">10주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">15,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">2,310원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>12,690원</strong></td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">50주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">75,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">11,550원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>63,450원</strong></td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">100주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">150,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">23,100원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>126,900원</strong></td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">500주</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">750,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">115,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;"><strong>634,500원</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>배당수익률과 배당금은 다르다</h2>
+  <p>
+    배당금은 실제로 받는 금액이고, 배당수익률은 투자금 또는 주가 대비 배당금의 비율입니다.
+  </p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>배당수익률(%) = 1주당 연간 배당금 ÷ 1주당 주가 × 100</strong>
+  </div>
+
+  <p>
+    주가가 50,000원이고 연간 1주당 배당금이 2,000원이라면 세전 배당수익률은 4%입니다.
+    15.4%의 세율을 단순 가정하면 1주당 세후 배당금은 1,692원이고, 매수가 기준 세후 배당수익률은 약 3.38%입니다.
+  </p>
+
+  <h2>분기배당과 연간 배당금 계산</h2>
+  <p>
+    분기마다 배당금을 지급하는 종목은 각 분기의 1주당 배당금을 합산해 연간 배당금을 계산해야 합니다.
+    매 분기 배당금이 항상 같다고 단정해서는 안 되며 실제 배당 공시를 확인해야 합니다.
+  </p>
+  <p>예를 들어 분기별 1주당 배당금이 각각 300원, 300원, 350원, 350원이라면 연간 배당금은 1,300원입니다.</p>
+  <ul>
+    <li>1분기: 300원</li>
+    <li>2분기: 300원</li>
+    <li>3분기: 350원</li>
+    <li>4분기: 350원</li>
+    <li><strong>연간 1주당 배당금: 1,300원</strong></li>
+  </ul>
+
+  <h2>계좌 종류에 따라 세후 금액이 달라질 수 있다</h2>
+  <p>
+    일반 위탁계좌, ISA, 연금저축이나 퇴직연금 계좌는 과세 방식과 과세 시점이 다를 수 있습니다.
+    비과세·분리과세 한도, 과세이연 또는 인출 시 과세 조건이 적용되는 계좌도 있으므로 일반계좌의 계산식을 그대로 사용하면 실제 금액과 차이가 날 수 있습니다.
+  </p>
+  <p>세제 혜택 계좌에서는 상품 편입 가능 여부와 만기·인출 조건도 함께 확인해야 합니다.</p>
+
+  <h2>해외주식 배당금 계산 시 주의할 점</h2>
+  <p>
+    해외주식 배당금은 배당을 지급한 국가에서 세금이 먼저 원천징수될 수 있고 국내 과세 관계도 함께 확인해야 합니다.
+    국가별 조세조약, 현지 원천징수 세율과 외국납부세액 처리에 따라 실제 수령액이 달라질 수 있습니다.
+  </p>
+  <p>
+    또한 해외 배당금은 외화로 입금될 수 있으므로 원화 기준 수령액은 적용 환율과 환전 비용의 영향을 받습니다.
+    해외주식은 단순히 세전 배당금에 15.4%를 적용해서 계산하지 말고 증권사의 배당 지급 명세를 확인해야 합니다.
+  </p>
+
+  <h2>금융소득이 많은 경우 확인할 사항</h2>
+  <p>
+    이자소득과 배당소득 등 금융소득의 연간 합계가 관련 기준을 초과하면 종합과세 대상이 될 수 있습니다.
+    이 경우 원천징수로 모든 세금 계산이 끝나지 않을 수 있으며 다른 소득과 합산한 최종 세액이 달라질 수 있습니다.
+  </p>
+  <p>
+    금융소득 규모가 크거나 국내외 배당을 함께 받는 경우에는 국세청 안내, 증권사 자료 또는 세무 전문가를 통해 해당 연도의 기준을 확인하는 것이 좋습니다.
+  </p>
+
+  <h2>배당금을 계산할 때 확인할 항목</h2>
+  <ul>
+    <li><strong>배당 기준일:</strong> 배당을 받을 권리가 확정되는 기준일</li>
+    <li><strong>1주당 배당금:</strong> 회사가 공시한 주당 배당액</li>
+    <li><strong>보유 수량:</strong> 배당 권리가 인정되는 주식 수</li>
+    <li><strong>지급일:</strong> 실제 배당금이 계좌에 입금되는 날짜</li>
+    <li><strong>계좌 종류:</strong> 일반계좌, ISA, 연금계좌 등</li>
+    <li><strong>적용 세율:</strong> 국내외 배당과 계좌에 실제 적용되는 세율</li>
+  </ul>
+
+  <h2>자주 묻는 질문</h2>
+
+  <h3>배당금 100만 원의 세후 수령액은 얼마일까?</h3>
+  <p>
+    15.4%의 세율을 단순 가정하면 세금은 154,000원이고 세후 수령액은 846,000원입니다.
+    실제 금액은 배당 유형과 계좌에 따라 달라질 수 있습니다.
+  </p>
+
+  <h3>배당금은 언제 입금될까?</h3>
+  <p>
+    배당 기준일과 실제 지급일은 다릅니다. 지급 일정은 회사의 배당 공시와 증권사 안내에서 확인해야 합니다.
+  </p>
+
+  <h3>소액 배당금도 세금이 부과될까?</h3>
+  <p>
+    원천징수 여부와 실제 세액은 배당 유형과 지급 조건에 따라 달라질 수 있습니다.
+    정확한 금액은 증권사의 배당금 지급 내역에서 확인하는 것이 가장 좋습니다.
+  </p>
+
+  <h3>배당수익률은 현재 주가로 계산해야 할까?</h3>
+  <p>
+    시장에서 표시하는 배당수익률은 현재 주가를 기준으로 계산하는 경우가 많습니다.
+    본인의 실제 투자 성과를 볼 때는 현재 주가가 아니라 자신의 매수가를 기준으로 계산할 수도 있습니다.
+  </p>
+
+  <h2>정리</h2>
+  <p>
+    세전 배당금은 <strong>보유 수량 × 1주당 배당금</strong>으로 계산합니다.
+    일반적인 국내 배당의 15.4% 원천징수를 가정하면 세후 수령액은 세전 배당금의 84.6%입니다.
+  </p>
+  <p>
+    다만 계좌 종류, 해외주식, 금융소득 규모와 세법에 따라 실제 세율과 최종 세액은 달라질 수 있습니다.
+    계산 결과는 예상값으로 활용하고 실제 수령액은 배당 지급 명세와 최신 세법을 확인해야 합니다.
+  </p>
+
+  <div style="margin-top:28px; padding:20px; border:1px solid #dce3ed; border-radius:6px; background:#f8fafc;">
+    <h2 style="margin-top:0;">관련 주식 계산기</h2>
+    <ul style="margin-bottom:0;">
+      <li><a href="https://stockcalc.ai.kr/Calculators/Dividend" target="_blank" rel="noopener noreferrer"><strong>배당금 계산기</strong></a> - 보유 수량과 세율에 따른 세전·세후 배당금 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/Profit" target="_blank" rel="noopener noreferrer"><strong>주식 수익률 계산기</strong></a> - 매매 비용을 반영한 순손익 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/Compound" target="_blank" rel="noopener noreferrer"><strong>복리 수익률 계산기</strong></a> - 배당 재투자를 포함한 장기 투자금 계산에 활용</li>
+    </ul>
+  </div>
+</article>

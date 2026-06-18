@@ -1,0 +1,236 @@
+@{
+    ViewData["Title"] = "목표수익률 계산법";
+    ViewData["Description"] = "목표수익률과 목표가 계산 공식, 목표수익금 역산 방법과 손익비를 설명합니다.";
+}
+<article class="content article-content">
+  <p>
+    주식을 매수할 때 목표수익률을 미리 정하면 어느 가격에서 매도를 검토할지 숫자로 확인할 수 있습니다.
+    목표수익률은 매수가 대비 얼마의 수익을 기대하는지를 백분율로 나타낸 값입니다.
+  </p>
+
+  <p style="padding:14px 16px; border-left:4px solid #0f7b8c; background:#eef8fa; color:#23404a;">
+    이 글은 목표수익률 계산 방법을 설명하는 정보성 콘텐츠입니다. 특정 종목의 매수·매도 추천이나 수익 보장을 의미하지 않습니다.
+  </p>
+
+  <h2>목표수익률이란?</h2>
+  <p>
+    목표수익률은 투자자가 매수가를 기준으로 기대하는 수익의 비율입니다.
+    예를 들어 50,000원에 매수한 주식에서 10%의 수익을 목표로 한다면 수수료와 세금을 제외한 목표 매도가는 55,000원입니다.
+  </p>
+  <p>
+    목표수익률은 미래 수익을 보장하는 값이 아니라 매도 기준을 세우기 위한 참고값입니다.
+    실제 투자에서는 목표수익률과 함께 감당할 수 있는 손실률도 정하는 것이 좋습니다.
+  </p>
+
+  <h2>주식 수익률 계산 공식</h2>
+  <p>매수가와 매도가를 알고 있다면 다음 공식으로 수익률을 계산할 수 있습니다.</p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>수익률(%) = (매도가 - 매수가) ÷ 매수가 × 100</strong>
+  </div>
+
+  <p>50,000원에 매수한 주식을 55,000원에 매도한다면 수익률은 다음과 같습니다.</p>
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>(55,000원 - 50,000원) ÷ 50,000원 × 100 = 10%</strong>
+  </div>
+
+  <h2>목표수익률로 목표가 계산하는 공식</h2>
+  <p>매수가와 목표수익률을 알고 있다면 목표 매도가는 다음 공식으로 계산합니다.</p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>목표가 = 매수가 × (1 + 목표수익률 ÷ 100)</strong>
+  </div>
+
+  <p>매수가가 50,000원이고 목표수익률이 15%라면 다음과 같습니다.</p>
+  <ul>
+    <li>매수가: 50,000원</li>
+    <li>목표수익률: 15%</li>
+    <li>1주당 목표수익: 7,500원</li>
+    <li><strong>목표가: 57,500원</strong></li>
+  </ul>
+
+  <div style="margin:20px 0; padding:20px; border:1px solid #123a63; border-radius:6px; background:#ffffff;">
+    <h2 style="margin-top:0;">목표가 바로 계산하기</h2>
+    <p>매수가와 목표수익률을 입력하면 목표 매도가와 1주당 예상수익을 확인할 수 있습니다.</p>
+    <p style="margin-bottom:0;">
+      <a href="https://stockcalc.ai.kr/Calculators/TargetPrice" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:11px 18px; border-radius:6px; background:#123a63; color:#ffffff; text-decoration:none; font-weight:bold;">목표가 계산기 바로가기</a>
+    </p>
+  </div>
+
+  <h2>목표수익률별 목표가 비교</h2>
+  <p>주식을 50,000원에 매수했다고 가정하면 목표수익률별 목표가는 다음과 같습니다.</p>
+
+  <div style="overflow-x:auto; margin:16px 0;">
+    <table style="width:100%; min-width:560px; border-collapse:collapse; border:1px solid #dce3ed;">
+      <thead>
+        <tr style="background:#f5f7fb;">
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:center;">목표수익률</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">목표가</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">1주당 예상수익</th>
+          <th style="padding:10px; border:1px solid #dce3ed; text-align:right;">100주 예상수익</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">3%</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">51,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">1,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">150,000원</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">5%</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">52,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">2,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">250,000원</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">10%</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">55,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">5,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">500,000원</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">15%</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">57,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">7,500원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">750,000원</td>
+        </tr>
+        <tr>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:center;">20%</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">60,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">10,000원</td>
+          <td style="padding:10px; border:1px solid #dce3ed; text-align:right;">1,000,000원</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>목표수익금으로 목표가 역산하기</h2>
+  <p>
+    목표수익률 대신 벌고 싶은 금액을 먼저 정했다면 보유 수량을 이용해 목표가를 계산할 수 있습니다.
+  </p>
+
+  <div style="margin:16px 0; padding:18px; border:1px solid #dce3ed; border-radius:6px; background:#f5f7fb; text-align:center;">
+    <strong>목표가 = 매수가 + (목표수익금 ÷ 보유 수량)</strong>
+  </div>
+
+  <p>
+    예를 들어 50,000원에 100주를 매수하고 800,000원의 수익을 목표로 한다면 1주당 필요한 수익은 8,000원입니다.
+    따라서 목표가는 58,000원이고 목표수익률은 16%입니다.
+  </p>
+  <ul>
+    <li>총 매수금액: 5,000,000원</li>
+    <li>목표수익금: 800,000원</li>
+    <li>1주당 목표수익: 8,000원</li>
+    <li>목표가: 58,000원</li>
+    <li><strong>목표수익률: 16%</strong></li>
+  </ul>
+
+  <h2>평단가가 바뀌면 목표가도 달라진다</h2>
+  <p>
+    추가 매수로 평균단가가 변했다면 처음 매수가가 아니라 새로운 평균단가를 기준으로 목표수익률을 계산해야 합니다.
+    예를 들어 평균단가가 50,000원에서 47,500원으로 낮아졌다면 10% 목표가는 55,000원이 아니라 52,250원입니다.
+  </p>
+  <p>
+    추가 매수 후 평균단가는
+    <a href="https://stockcalc.ai.kr/Calculators/AveragePrice" target="_blank" rel="noopener noreferrer"><strong>평단가 계산기</strong></a>로 먼저 확인할 수 있습니다.
+  </p>
+
+  <h2>평가수익률과 실제 순수익률의 차이</h2>
+  <p>
+    주가가 목표가에 도달해도 실제 순수익률은 계산한 목표수익률보다 조금 낮을 수 있습니다.
+    주식을 사고팔 때 수수료가 발생하고 매도 시 관련 세금이 적용될 수 있기 때문입니다.
+  </p>
+  <p>
+    예를 들어 10% 상승한 가격에 매도하더라도 수수료와 세금을 차감하면 실제 손에 남는 순수익률은 10%보다 낮습니다.
+    증권사 수수료율과 적용 세율은 계좌와 거래 시점에 따라 달라질 수 있으므로 실제 조건을 확인해야 합니다.
+  </p>
+  <p>
+    매매 비용을 반영한 순손익은
+    <a href="https://stockcalc.ai.kr/Calculators/Profit" target="_blank" rel="noopener noreferrer"><strong>주식 수익률 계산기</strong></a>에서 계산할 수 있습니다.
+  </p>
+
+  <h2>비용을 고려한 목표 매도가 계산</h2>
+  <p>
+    세후 순수익률을 정확히 목표로 한다면 단순 목표가보다 조금 높은 매도가가 필요합니다.
+    실제 계산에서는 다음 항목을 모두 반영해야 합니다.
+  </p>
+  <ul>
+    <li>총 매수금액</li>
+    <li>매수 수수료</li>
+    <li>총 매도금액</li>
+    <li>매도 수수료</li>
+    <li>매도 시 적용되는 세금</li>
+  </ul>
+  <p>
+    비용 구조가 계좌마다 다르므로 목표가 계산기에서 구한 값을 기준으로 수익률 계산기에 다시 입력해 순손익을 확인하는 방법이 실용적입니다.
+  </p>
+
+  <h2>목표수익률과 손절률을 함께 정하기</h2>
+  <p>
+    목표수익률만 높게 정하면 기대수익은 커 보이지만 목표가에 도달할 가능성과 보유 기간도 함께 고려해야 합니다.
+    목표가와 손절가를 함께 정하면 기대수익과 예상손실의 비율인 손익비를 확인할 수 있습니다.
+  </p>
+  <p>50,000원에 매수한 주식의 목표수익률을 10%, 허용 손실률을 5%로 정한 예시는 다음과 같습니다.</p>
+  <ul>
+    <li>목표가: 55,000원</li>
+    <li>1주당 기대수익: 5,000원</li>
+    <li>손절가: 47,500원</li>
+    <li>1주당 예상손실: 2,500원</li>
+    <li><strong>손익비: 2:1</strong></li>
+  </ul>
+  <p>
+    허용 손실률에 따른 가격은
+    <a href="https://stockcalc.ai.kr/Calculators/StopLoss" target="_blank" rel="noopener noreferrer"><strong>손절가 계산기</strong></a>에서 확인할 수 있습니다.
+  </p>
+
+  <h2>목표수익률을 정할 때 확인할 점</h2>
+  <ul>
+    <li><strong>투자 기간:</strong> 단기와 장기 투자의 기대수익률을 같은 기준으로 비교하지 않습니다.</li>
+    <li><strong>주가 변동성:</strong> 종목의 평소 가격 변동 범위를 확인합니다.</li>
+    <li><strong>손실 한도:</strong> 기대수익뿐 아니라 감당할 수 있는 최대 손실도 정합니다.</li>
+    <li><strong>매매 비용:</strong> 수수료와 세금을 차감한 순수익을 확인합니다.</li>
+    <li><strong>분할매도:</strong> 목표가에 도달했을 때 전량 또는 일부만 매도할지 정합니다.</li>
+    <li><strong>투자 근거:</strong> 단순히 원하는 금액이 아니라 전략과 근거에 맞는 목표인지 점검합니다.</li>
+  </ul>
+
+  <h2>자주 묻는 질문</h2>
+
+  <h3>매수가 70,000원에서 10% 목표가는 얼마일까?</h3>
+  <p>70,000원 × 1.1 = 77,000원이므로 목표가는 77,000원입니다. 1주당 예상수익은 7,000원입니다.</p>
+
+  <h3>매수가 50,000원에서 20% 목표가는 얼마일까?</h3>
+  <p>50,000원 × 1.2 = 60,000원이므로 목표가는 60,000원입니다.</p>
+
+  <h3>주가가 10% 오르면 수익금은 얼마일까?</h3>
+  <p>
+    수수료와 세금을 제외하면 총 매수금액의 10%입니다.
+    50,000원에 100주를 매수했다면 총 매수금액은 5,000,000원이고 예상수익은 500,000원입니다.
+  </p>
+
+  <h3>목표수익률은 높을수록 좋을까?</h3>
+  <p>
+    목표수익률이 높으면 기대수익금도 커지지만 목표가에 도달하기까지 더 큰 상승과 긴 시간이 필요할 수 있습니다.
+    투자 기간, 변동성, 손실 한도와 전략을 함께 고려해야 합니다.
+  </p>
+
+  <h2>정리</h2>
+  <p>
+    목표수익률은 <strong>(매도가 - 매수가) ÷ 매수가 × 100</strong>으로 계산하고,
+    목표가는 <strong>매수가 × (1 + 목표수익률)</strong>로 계산할 수 있습니다.
+  </p>
+  <p>
+    50,000원에 매수한 주식의 목표수익률이 10%라면 목표가는 55,000원입니다.
+    실제 투자에서는 수수료와 세금을 반영한 순수익, 보유 수량에 따른 목표수익금, 손절가와 손익비도 함께 확인하는 것이 중요합니다.
+  </p>
+
+  <div style="margin-top:28px; padding:20px; border:1px solid #dce3ed; border-radius:6px; background:#f8fafc;">
+    <h2 style="margin-top:0;">관련 주식 계산기</h2>
+    <ul style="margin-bottom:0;">
+      <li><a href="https://stockcalc.ai.kr/Calculators/TargetPrice" target="_blank" rel="noopener noreferrer"><strong>목표가 계산기</strong></a> - 목표수익률에 따른 매도 가격 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/Profit" target="_blank" rel="noopener noreferrer"><strong>주식 수익률 계산기</strong></a> - 수수료와 세금을 반영한 순손익 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/StopLoss" target="_blank" rel="noopener noreferrer"><strong>손절가 계산기</strong></a> - 허용 손실률에 따른 손절 가격 계산</li>
+      <li><a href="https://stockcalc.ai.kr/Calculators/AveragePrice" target="_blank" rel="noopener noreferrer"><strong>평단가 계산기</strong></a> - 추가 매수 후 새로운 평균단가 계산</li>
+    </ul>
+  </div>
+</article>

@@ -58,6 +58,8 @@ input, button { font: inherit; }
   border-radius: var(--radius);
   background: #fff;
   box-shadow: var(--shadow);
+  max-height: min(70vh, 560px);
+  overflow-y: auto;
 }
 .nav-dropdown-right { right: 0; left: auto; }
 .site-nav .nav-dropdown a { padding: 9px 11px; color: #364255; white-space: nowrap; }
