@@ -34,4 +34,22 @@ public class ArticlesController : Controller
     public IActionResult EtfLongTermReturn() => View();
 
     public IActionResult AveragingDownCostBasis() => View();
+
+    public IActionResult IsaAccountWorstInvestmentMistake() => View();
+
+    public IActionResult StockInvestmentProcessGuide() => View();
+
+    public IActionResult StockBeginnerAvoidTradingHours() => View();
+
+    public IActionResult SpacexSuperIpoMarketImpact() => View();
+
+    public IActionResult AiEraValuablePeopleAndAssetStrategy() => View();
+
+    public IActionResult OddLotTradingMarketManipulationWarning() => View();
+
+    public IActionResult JosephKennedyShoeshineBoyTheory() => View();
+
+    public IActionResult OpenRangeBreakoutTradingGuide() => View();
+
+    public IActionResult WhyStockDoesNotRiseWhenRetailBuying() => View();
 }
