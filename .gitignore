@@ -4,3 +4,12 @@
 .local/
 artifacts/
 *.user
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.pfx
+*.p12
+**/appsettings.Local.json
+**/secrets.json
